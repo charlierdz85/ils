@@ -1,0 +1,43 @@
+<style>
+  .ng-autocomplete ::ng-deep .autocomplete-container{
+    box-shadow: none !important;
+    background-color: transparent !important;
+    margin-bottom: 20px !important;
+  }
+
+  .ng-autocomplete ::ng-deep .autocomplete-container input[type=text]{
+    background-color: transparent !important;
+    margin-bottom: 20px !important;
+    height: 30px !important;
+  }
+</style>
+
+<div class="ng-autocomplete">
+  <div class="search-wrapper" [class.active]="isActive">
+    <div class="input-holder">
+      
+        <ng-autocomplete 
+          class="search-input" 
+          [data]="data" 
+          [searchKeyword]="keyword" 
+          (selected)='selectEvent($event)'
+          (inputChanged)='onChangeSearch($event)' 
+          (inputFocused)='onFocused($event)' 
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate">
+        </ng-autocomplete>    
+      
+        <ng-template #itemTemplate let-item>
+          <a [innerHTML]="item.name"></a>
+        </ng-template>
+      
+        <ng-template #notFoundTemplate let-notFound>
+          <div [innerHTML]="notFound"></div>
+        </ng-template>
+
+        <button class="search-icon" (click)="isActive = true"><span></span></button>
+      
+    </div>
+    <button class="close" (click)="isActive = false"></button>
+  </div>
+</div>

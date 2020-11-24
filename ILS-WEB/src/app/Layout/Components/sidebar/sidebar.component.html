@@ -1,0 +1,221 @@
+<div [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme" (mouseover)="sidebarHover()"
+     (mouseout)="sidebarHover()">
+  <div class="app-header__logo">
+    <div class="logo-src"></div>
+    <div class="header__pane ml-auto">
+      <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+              [ngClass]="{'is-active' : globals.toggleSidebar}" (click)="toggleSidebar()">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="app-sidebar-content">
+    <div class="app-sidebar-scroll">
+      <perfect-scrollbar [autoPropagation]="true">
+        <div class="v-sidebar-menu vsm-default">
+          <div class="vsm-list">
+
+            <ngb-accordion [destroyOnHide]="false" [closeOthers]="true" [activeIds]="extraParameter">
+              
+              <ngb-panel>
+                <ng-template ngbPanelHeader>
+                  <div class="vsm-header">Inicio</div>
+                </ng-template>
+              </ngb-panel>
+
+              <ngb-panel id="startMenu">
+                <ng-template ngbPanelHeader>
+                  <button ngbPanelToggle class="vsm-link">
+                    <i class="vsm-icon pe-7s-rocket"></i>
+                    <span class="vsm-title">Dashboards</span>
+                    <i class="vsm-arrow"></i>
+                  </button>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  <div class="vsm-dropdown">
+                    <div class="vsm-list">
+                      <div class="vsm-item">
+                        <a routerLink="" routerLinkActive="active-item" [routerLinkActiveOptions]="{exact: true}" class="vsm-link">
+                          <span class="vsm-title">
+                            Inicio
+                          </span>
+                        </a>
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLink="about" routerLinkActive="active-item" [routerLinkActiveOptions]="{exact: true}" class="vsm-link">
+                          <span class="vsm-title">
+                            Acerca de ...
+                          </span>
+                        </a>
+                        
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLink="login" routerLinkActive="active-item" [routerLinkActiveOptions]="{exact: true}" class="vsm-link">
+                          <span class="vsm-title">
+                            Login
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+
+            </ngb-accordion>
+
+            <div class="vsm-header">Catálogos</div>
+            <div class="vsm-item">
+              <a routerLink="/charts/chartjs" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Áreas</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Clientes</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Códigos de razón</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Cuentas</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Estátus de inventarios</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Familias</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Productos</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Proveedores</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Transportistas</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Ubicaciones</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/list-group" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Unidades de medida</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <ngb-accordion [destroyOnHide]="false" [closeOthers]="true" [activeIds]="extraParameter">
+                <ngb-panel id="cfgEcommMenu">
+                  <ng-template ngbPanelHeader>
+                    <button ngbPanelToggle class="vsm-link">
+                      <i class="vsm-icon pe-7s-rocket"></i>
+                      <span class="vsm-title">Usuarios</span>
+                      <i class="vsm-arrow"></i>
+                    </button>
+                  </ng-template>
+                  <ng-template ngbPanelContent>
+                    <div class="vsm-dropdown">
+                      <div class="vsm-list">
+                        <div class="vsm-item">
+                          <a routerLink="" routerLinkActive="active-item" [routerLinkActiveOptions]="{exact: true}" class="vsm-link">
+                            <span class="vsm-title">
+                              Accesos
+                            </span>
+                          </a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="" routerLinkActive="active-item" [routerLinkActiveOptions]="{exact: true}" class="vsm-link">
+                            <span class="vsm-title">
+                              Perfiles
+                            </span>
+                          </a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="" routerLinkActive="active-item" [routerLinkActiveOptions]="{exact: true}" class="vsm-link">
+                            <span class="vsm-title">
+                              Roles
+                            </span>
+                          </a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="" routerLinkActive="active-item" [routerLinkActiveOptions]="{exact: true}" class="vsm-link">
+                            <span class="vsm-title">
+                              Usuarios
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </ngb-panel>
+              </ngb-accordion>
+
+            </div>
+
+            <div class="vsm-header">Recibo</div>
+            <div class="vsm-item">
+              <a routerLink="/elements/buttons-standard" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Recibo</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/buttons-standard" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Recibo con orden</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/buttons-standard" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Avance de recibo</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/buttons-standard" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Identificar</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLink="/elements/buttons-standard" routerLinkActive="active-item" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph2"></i>
+                <span class="vsm-title">Reversa</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </perfect-scrollbar>
+    </div>
+  </div>
+</div>

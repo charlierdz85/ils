@@ -1,0 +1,28 @@
+
+About us...
+
+<!-- add the following snippet inside your template -->
+<div class="col-md-2">
+    <div class="input-group">
+        <!-- input box -->
+        <input class="form-control" name="mydate" placeholder="Select a date" 
+               angular-mydatepicker #dp="angular-mydatepicker" 
+               [(ngModel)]="model" [options]="myDpOptions" 
+               (dateChanged)="onDateChanged($event)"/>
+      
+        <!-- clear date button -->
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary" *ngIf="model" (click)="dp.clearDate()">
+            <i class="vsm-icon pe-7s-close-circle"></i>
+          </button>
+        </div>
+      
+        <!-- toggle calendar button -->
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()">
+            <i class="vsm-icon pe-7s-date"></i>
+          </button>
+        </div>
+      
+    </div>
+</div>
